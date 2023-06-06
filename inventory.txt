@@ -1,16 +1,12 @@
-Paku 5cm
-Paku
-2000
-50
-Cat Merah
-Cat
-25000
-15
-Palu
-Perkakas
-15000
-20
 Cat Hitam
 Cat
 15000
-25
+5
+Paku 2cm
+Paku
+500
+30
+Kuas
+Perkakas
+10000
+30

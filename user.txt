@@ -1,12 +1,12 @@
-Andi
-Mulawarman
-08562458
-usn : andi123
+Tian
+Sumurboto
+0865485
+usn : tian
 pass : 123456
 role : Owner
-Budi
-SIgar Bencah
-0845375
-usn : budiganteng
-pass : admin
-role : Admin
+rendi
+mulawarman
+089674
+usn : rendi
+pass : 12345
+role : Owner

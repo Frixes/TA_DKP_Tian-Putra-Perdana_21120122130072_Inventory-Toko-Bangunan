@@ -322,6 +322,11 @@ public class menuInventory extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+                DefaultTableModel table = (DefaultTableModel) tableInven.getModel();
+
+        table.setRowCount(0);
+        loadData();
+        
         this.dispose();
         new tambahInventory(role).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -389,7 +394,7 @@ public class menuInventory extends javax.swing.JFrame {
         String harga = table.getValueAt(baris, 2).toString();
         String jumlah = table.getValueAt(baris, 3).toString();
         
-        new menuEditInven(this, rootPaneCheckingEnabled, nama, jenis, harga, jumlah, table, baris).setVisible(true);
+        new menuEditInven(this, rootPaneCheckingEnabled, nama, jenis, harga, jumlah, table, baris, role).setVisible(true);
         }
 
     }//GEN-LAST:event_jButton4ActionPerformed

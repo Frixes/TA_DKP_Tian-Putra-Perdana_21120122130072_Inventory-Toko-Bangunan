@@ -23,11 +23,11 @@ public class menuEditInven extends javax.swing.JDialog {
      * @param jumlah1
      * @param table
      */
-    private String nama, jenis, harga,jumlah;
+    private String nama, jenis, harga,jumlah,role;
     private int baris;
     private DefaultTableModel table;
     
-    public menuEditInven(java.awt.Frame parent, boolean modal, String nama1, String jenis1, String harga1, String jumlah1, DefaultTableModel table1, int baris1) {
+    public menuEditInven(java.awt.Frame parent, boolean modal, String nama1, String jenis1, String harga1, String jumlah1, DefaultTableModel table1, int baris1, String role) {
         super(parent, modal);
 //        init2(nama1, jenis1, harga1, jumlah1, table);
         nama = nama1;
@@ -36,6 +36,7 @@ public class menuEditInven extends javax.swing.JDialog {
         jumlah = jumlah1;
         table = table1;
         baris = baris1;
+        this.role = role;
         initComponents();
     }
     
@@ -159,6 +160,7 @@ public class menuEditInven extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -177,6 +179,11 @@ public class menuEditInven extends javax.swing.JDialog {
         jumlah = jumlahField.getText();
         
         table.setValueAt(nama, baris, 0);
+        table.setValueAt(jenis, baris, 1);
+        table.setValueAt(harga, baris, 2);
+        table.setValueAt(jumlah, baris, 3);
+        this.dispose();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jumlahFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jumlahFieldKeyTyped

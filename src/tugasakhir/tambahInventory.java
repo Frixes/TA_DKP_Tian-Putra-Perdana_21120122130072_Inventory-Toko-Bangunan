@@ -56,33 +56,46 @@ public class tambahInventory extends javax.swing.JFrame {
             this.dispose();
             new menuInventory().setVisible(true);
                 } else {
-                while((line = reader.readLine()) != null) {
+                    String line2;
+                    String err = "n";
+                    try (BufferedReader reader2 = new BufferedReader(new FileReader("inventory.txt"))) {
+                        try (BufferedWriter writer2 = new BufferedWriter(new FileWriter("inventory.txt", true))) {
+                        while((line2 = reader2.readLine()) != null) {
                     System.out.println("d");
-                    data[0] = line.substring(0).trim();
-                    data[1] = reader.readLine().substring(0).trim();
-                    data[2] = reader.readLine().substring(0).trim();
-//                    data[3] = reader.readLine().substring(0).trim();
+                    data[0] = line2.substring(0).trim();
+                    data[1] = reader2.readLine().substring(0).trim();
+                    data[2] = reader2.readLine().substring(0).trim();
+                    data[3] = reader2.readLine().substring(0).trim();
                     System.out.println(data[0]);
                     if (data[0].toLowerCase().contains(nama)) {
                         JOptionPane.showMessageDialog(this, "Nama barang sudah ada", "Error", JOptionPane.ERROR_MESSAGE);
+                        err = "y";
                         break;
-                    } else {
-                        writer.write(nama);
-                        writer.newLine();
-                        writer.write(jenis);
-                        writer.newLine();
-                        writer.write(harga);
-                        writer.newLine();
-                        writer.write(jumlah);
-                        writer.newLine();
+                    } 
+
+                }
+                    if (err.equals("n")) {
+                                                writer2.write(nama);
+                        writer2.newLine();
+                        writer2.write(jenis);
+                        writer2.newLine();
+                        writer2.write(harga);
+                        writer2.newLine();
+                        writer2.write(jumlah);
+                        writer2.newLine();
                         System.out.println("User inputs saved to file.");
             
             this.dispose();
             new menuInventory(role).setVisible(true);
-            break;
-                    }
+                    }    
+                        }catch(IOException e) {
+            e.printStackTrace();
+        }
+                        
+                    } catch(IOException e) {
+            e.printStackTrace();
+        }
 
-                }
                 }
 
 
